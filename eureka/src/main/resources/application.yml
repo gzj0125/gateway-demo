@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: test
+  application:
+    name: eureka
+#  client:
+#    fetch-registry: false
+#    register-with-eureka: false
+
+
+---
+spring:
+  profiles: test
+server:
+  port: 8081
+eureka:
+ instance:
+#   hostname: eureka-1
+#   instance-id: eureka-1
+ client:
+   service-url:
+     defaultZone: http://localhost:8081/eureka
+   fetch-registry: false
+   register-with-eureka: false
+ server:
+   # 该配置可以修改检查失效服务的时间，每隔30s检查失效服务，并移除列表 (Spring Cloud默认该配置是 60s)
+   eviction-interval-timer-in-ms: 30000
+   # 关闭自我保护机制
+#   enable-self-preservation: false
+
