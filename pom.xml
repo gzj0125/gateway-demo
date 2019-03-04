@@ -22,6 +22,7 @@
 		<module>gateway</module>
 		<module>eureka</module>
 		<module>demo-project</module>
+		<!--  can i test -->
 	</modules>
 
 	<properties>
